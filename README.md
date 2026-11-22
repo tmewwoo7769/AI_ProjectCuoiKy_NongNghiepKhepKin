@@ -10,11 +10,6 @@ suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · tr�
 
 <img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/9ba4e7f2-45bd-47a4-9c19-b6a65259e1b9" />
 
-<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/0fe90d1d-cdd6-4c82-9100-efa555fb119e" />
-
-<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/1427cc4d-fe30-4757-baa8-910c7ea318cd" />
-
-<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/ef7de8a2-8cb2-4eea-b2b7-d970c268de6b" />
 
 <img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/47996063-597c-4737-bc24-c94602ffe62f" />
 
