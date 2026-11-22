@@ -1,0 +1,16 @@
+crop_name,ideal_soil,ideal_temp,ideal_light,description,care_tips,regions,market_value
+Sả,45,30,80,"Cây gia vị, chịu hạn khá, chịu nóng, dễ trồng, ít sâu bệnh, ít chăm sóc.","Trồng bằng tép tách bụi, tưới 2-3 lần/tuần; bón phân hữu cơ 1-2 tháng/lần",ALL,1
+Xương rồng,20,32,90,"Cây mọng nước, chịu hạn cực tốt, ít nước, rất dễ trồng cho người mới, ưa nắng.","Tưới khoảng 1 lần/tuần; dùng đất pha cát cho thoát nước",ALL,1
+Lô hội (nha đam),30,30,75,"Cây mọng nước, chịu hạn tốt, ít tưới, dễ trồng, trồng chậu ban công được.","Tưới khi mặt đất khô 2-3cm; chậu có lỗ thoát nước",South;Central,2
+Rau muống,80,30,70,"Rau ăn lá, ưa nước, ưa ẩm, thu hoạch nhanh, ngắn ngày, dễ trồng.","Giữ đất luôn ẩm; thu hoạch sau 25-30 ngày",ALL,1
+Xà lách,65,20,50,"Rau ăn lá, ưa mát, thu hoạch nhanh, cần đất ẩm đều.","Trồng nơi râm mát; tưới nhẹ sáng và chiều",North;Highlands,2
+Cà chua,60,26,80,"Cây ăn quả, ưa nắng, giá trị kinh tế khá, cần làm giàn.","Làm giàn; tỉa chồi nách; bón kali khi ra quả",North;Highlands;South,2
+Ớt,55,30,85,"Cây gia vị, ưa nắng, chịu nóng, giá trị kinh tế cao, thu hoạch nhiều đợt.","Tưới đều, tránh úng; bón phân khi ra hoa",ALL,3
+Dâu tây,65,18,60,"Cây ăn quả, ưa mát, giá trị kinh tế cao, khí hậu mát, khó chăm hơn.","Cần đất thoát nước, che mưa; tưới nhỏ giọt",Highlands,3
+Húng quế,60,28,75,"Rau gia vị, thảo mộc, dễ trồng, ưa nắng, thu hoạch nhanh.","Ngắt ngọn thường xuyên để cây ra nhánh",ALL,1
+Dưa leo,70,28,80,"Cây ăn quả, thu hoạch nhanh, ngắn ngày, ưa nước, ưa nắng, lợi nhuận khá.","Làm giàn; tưới đều; thu hoạch sau 35-45 ngày",ALL,2
+Mướp,70,30,80,"Cây ăn quả, ưa nắng, chịu nóng, dễ trồng, leo giàn.","Làm giàn; tưới đều",South;Central;North,1
+Cà phê,55,24,60,"Cây công nghiệp, giá trị kinh tế cao, khí hậu mát, cần thời gian dài.","Cần che bóng, tưới mùa khô",Highlands,3
+Bạc hà,70,24,55,"Thảo mộc, ưa mát, ưa ẩm, dễ trồng, trồng chậu ban công được.","Trồng chậu riêng vì lan nhanh",ALL,1
+Khổ qua,65,28,80,"Cây ăn quả, ưa nắng, chịu nóng, giá trị kinh tế khá, leo giàn.","Làm giàn; bón phân hữu cơ",South;Central,2
+Sầu riêng,60,28,70,"Cây ăn quả, ưa nóng ẩm, giá trị kinh tế cao, cần nhiều năm để thu hoạch.","Cần đất thoát nước tốt, tránh úng",South;Highlands,3

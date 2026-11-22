@@ -1,0 +1,80 @@
+/**
+ * transitHub.sim.js – giả lập trạm trung chuyển (transit hub) cho fake node 2.
+ *
+ * CÁCH GẮN VÀO fake-node.js (chỉ 3 dòng):
+ *
+ *   const { nextTransitHub } = require("./transitHub.sim");   // (1) đầu file
+ *   ...
+ *   // (2) trong hàm/ vòng lặp tạo payload của NODE 2 (xe lạnh), trước khi gửi:
+ *   payload.transit_hub = nextTransitHub();
+ *
+ * Nếu fake-node.js của bạn dùng ES Module (import/export), đổi:
+ *   - dòng require  → import { nextTransitHub } from "./transitHub.sim.js";
+ *   - dòng cuối file → export { nextTransitHub, resetTransitHub };
+ *
+ * Chế độ thử nhanh:
+ *   SIM_HUB_MODE=overload   → hub hiện tại luôn quá tải (để xem cảnh báo + gợi ý chuyển hướng)
+ *   SIM_HUB_MODE=normal     → luôn bình thường
+ *   (mặc định "cycle")      → cứ ~24 lượt gửi thì có ~6 lượt quá tải, chu kỳ lặp lại
+ */
+
+const HUBS = [
+  { name: "Hub A – Kho lạnh trung tâm", capacity: 120, distanceKm: 0 },
+  { name: "Hub B – Kho lạnh phía Đông", capacity: 150, distanceKm: 18 },
+  { name: "Hub C – Điểm trung chuyển nhỏ", capacity: 60, distanceKm: 9 },
+];
+
+const MODE = (process.env.SIM_HUB_MODE || "cycle").toLowerCase();
+const CYCLE_LENGTH = 24;
+const OVERLOAD_TICKS = 6;
+
+let tick = 0;
+// Tải hiện tại của từng hub (đơn vị: pallet). Khởi tạo ở mức ~55-70%.
+const load = HUBS.map((h) => Math.round(h.capacity * (0.55 + Math.random() * 0.15)));
+
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+function statusOf(currentLoad, capacity) {
+  if (currentLoad > capacity) return "OVERLOADED";
+  if (currentLoad >= capacity * 0.85) return "NEAR_CAPACITY";
+  return "NORMAL";
+}
+
+function nextTransitHub() {
+  tick += 1;
+
+  // Random walk nhẹ cho từng hub
+  for (let i = 0; i < HUBS.length; i++) {
+    const step = Math.round((Math.random() - 0.5) * 6);
+    load[i] = clamp(load[i] + step, Math.round(HUBS[i].capacity * 0.3), Math.round(HUBS[i].capacity * 0.95));
+  }
+
+  // Hub hiện tại (index 0) bị đẩy lên quá tải theo chế độ
+  const overloadNow =
+    MODE === "overload" || (MODE === "cycle" && tick % CYCLE_LENGTH >= CYCLE_LENGTH - OVERLOAD_TICKS);
+  const current = HUBS[0];
+  const currentLoad = overloadNow
+    ? Math.round(current.capacity * (1.05 + Math.random() * 0.15))
+    : MODE === "normal"
+      ? Math.min(load[0], Math.round(current.capacity * 0.8))
+      : load[0];
+
+  return {
+    name: current.name,
+    capacity: current.capacity,
+    currentLoad,
+    status: statusOf(currentLoad, current.capacity),
+    alternativeHubs: HUBS.slice(1).map((h, i) => ({
+      name: h.name,
+      capacity: h.capacity,
+      currentLoad: load[i + 1],
+      distanceKm: h.distanceKm,
+    })),
+  };
+}
+
+function resetTransitHub() {
+  tick = 0;
+}
+
+module.exports = { nextTransitHub, resetTransitHub };
