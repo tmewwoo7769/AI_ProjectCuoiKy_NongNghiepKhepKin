@@ -1,0 +1,82 @@
+Copyright (c) 2026 Nguyễn Ngọc Hân, Trương Anh Phú. All rights reserved.
+Bản quyền (c) 2026 Nguyễn Ngọc Hân, Trương Anh Phú. Bảo lưu mọi quyền.
+
+Project / Dự án: Hệ gợi ý Nông nghiệp Khép kín Thông minh
+                 (Smart Closed-Loop Agriculture Recommendation System)
+Repository: https://github.com/tmewwoo7769/AI_ProjectCuoiKy_NongNghiepKhepKin
+
+================================================================================
+ENGLISH
+================================================================================
+
+This repository, including its source code, firmware, documentation, datasets
+and report (the "Work"), is made publicly visible solely for the purposes of
+academic evaluation, judging and review (for example by course instructors and
+competition judges).
+
+PERMITTED, without prior written permission:
+  1. Viewing and reading the Work.
+  2. Cloning or downloading the Work and running it locally for the sole
+     purpose of evaluating or judging it.
+
+NOT PERMITTED, without prior written permission from the copyright holders:
+  1. Copying, reproducing, or redistributing the Work or any substantial part
+     of it.
+  2. Modifying the Work or creating derivative works based on it.
+  3. Using the Work, in whole or in part, for commercial purposes.
+  4. Submitting the Work, or any part of it, as your own work in any course,
+     competition or publication.
+  5. Removing or altering this notice or any copyright attribution.
+
+No license, express or implied, is granted except as stated above. All rights
+not expressly granted are reserved by the copyright holders.
+
+THIRD-PARTY COMPONENTS: The Work depends on open-source libraries (for example
+Node.js packages, Python packages, and Arduino libraries). Those components
+remain under their own respective licenses, which are not affected by this
+notice.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE WORK OR ITS USE. The Work is an academic prototype and must not be
+relied upon for safety-critical or production use.
+
+To request permission for any use not listed above, contact the authors via
+GitHub: https://github.com/tmewwoo7769
+
+================================================================================
+TIẾNG VIỆT (bản tham khảo; khi có khác biệt, bản tiếng Anh được ưu tiên)
+================================================================================
+
+Kho mã nguồn này, bao gồm mã nguồn, firmware, tài liệu, tập dữ liệu và báo cáo
+("Sản phẩm"), được công khai chỉ nhằm mục đích đánh giá học thuật, chấm điểm và
+thẩm định (ví dụ: giảng viên, ban giám khảo cuộc thi).
+
+ĐƯỢC PHÉP, không cần xin phép trước:
+  1. Xem và đọc Sản phẩm.
+  2. Tải về hoặc clone và chạy cục bộ Sản phẩm với mục đích duy nhất là đánh giá,
+     chấm điểm.
+
+KHÔNG ĐƯỢC PHÉP, nếu chưa có văn bản đồng ý của chủ sở hữu bản quyền:
+  1. Sao chép, tái bản hoặc phân phối lại Sản phẩm hay bất kỳ phần đáng kể nào.
+  2. Sửa đổi Sản phẩm hoặc tạo sản phẩm phái sinh từ Sản phẩm.
+  3. Sử dụng Sản phẩm, toàn bộ hay một phần, cho mục đích thương mại.
+  4. Nộp Sản phẩm hoặc một phần của Sản phẩm như thể là sản phẩm của chính mình
+     trong bất kỳ môn học, cuộc thi hay ấn phẩm nào.
+  5. Xóa hoặc thay đổi thông báo này hay thông tin ghi nhận bản quyền.
+
+Không có giấy phép nào, rõ ràng hay ngầm định, được cấp ngoài những gì nêu trên.
+Mọi quyền không được cấp rõ ràng đều được chủ sở hữu bản quyền bảo lưu.
+
+THÀNH PHẦN BÊN THỨ BA: Sản phẩm sử dụng các thư viện mã nguồn mở (như gói
+Node.js, gói Python, thư viện Arduino). Các thành phần đó vẫn thuộc giấy phép
+riêng của chúng và không bị ảnh hưởng bởi thông báo này.
+
+SẢN PHẨM ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG", KHÔNG BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO.
+Sản phẩm là nguyên mẫu học thuật, không được dùng cho hệ thống đòi hỏi an toàn
+hoặc môi trường vận hành thực tế.
+
+Muốn xin phép cho việc sử dụng không nêu ở trên, vui lòng liên hệ tác giả qua
+GitHub: https://github.com/tmewwoo7769
