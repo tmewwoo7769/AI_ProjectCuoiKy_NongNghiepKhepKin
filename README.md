@@ -1,1 +1,0 @@
-# AI_ProjectCuoiKy_NongNghiepKhepKin
