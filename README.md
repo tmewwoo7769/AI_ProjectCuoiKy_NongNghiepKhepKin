@@ -77,14 +77,14 @@ Ngoài ra, **hệ gợi ý cây trồng** kết hợp độ tương đồng cosi
 
 ## 2. Tính năng chính
 
-### Nút 1 — "Vườn"
+### Nút 1 - "Vườn"
 - Đo nhiệt độ, độ ẩm không khí, áp suất, khí gas (BME680), cường độ ánh sáng (BH1750), độ ẩm đất (cảm biến điện dung, ADC).
 - **TinyML** (cây quyết định) chạy trên STM32 điều khiển relay bơm; ngưỡng tham chiếu độ ẩm đất **35%**.
 - Hai chế độ: **TỰ ĐỘNG** (TinyML nắm quyền) và **THỦ CÔNG** (điều khiển từ web, độc lập với TinyML).
 - Màn hình TFT hiển thị thông số và trạng thái bơm tại chỗ.
 - Watchdog độc lập (**IWDG**) tự khởi động lại khi chương trình treo.
 
-### Nút 2 — "Vận chuyển"
+### Nút 2 - "Vận chuyển"
 - Môi trường hàng hóa (BME680), độ rung (MPU6500), thời gian chính xác (DS3231), định vị (GPS ATGM336H).
 - Truyền dữ liệu qua **WiFi** (kiểm thử) hoặc **4G A7680C** (cờ `USE_GSM` trong firmware).
 - Giữ dấu thời gian đúng khi mất GPS; vị trí được đánh dấu "không còn mới".
