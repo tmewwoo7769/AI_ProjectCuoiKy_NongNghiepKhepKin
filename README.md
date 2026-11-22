@@ -799,7 +799,7 @@ Nhóm công bố thẳng các hạn chế để người đọc đánh giá đú
 
 - 📄 **Báo cáo đồ án:** BaoCao_DoAnCuoiKy_Nhom06.docx
 
-**Giấy phép:** © 2026 Nguyễn Ngọc Hân, Xin bảo lưu mọi quyền. Mã nguồn được công khai để phục vụ đánh giá, chấm điểm; được phép xem và chạy thử cục bộ cho mục đích đánh giá. Không được sao chép, sửa đổi, phân phối lại, dùng thương mại hoặc nộp lại như sản phẩm của mình khi chưa có sự đồng ý bằng văn bản của tác giả. Chi tiết xem tệp LICENSE.
+**Giấy phép:** **© 2026 Nguyễn Ngọc Hân, Xin bảo lưu mọi quyền. Mã nguồn được công khai để phục vụ đánh giá, chấm điểm; được phép xem và chạy thử cục bộ cho mục đích đánh giá. Không được sao chép, sửa đổi, phân phối lại, dùng thương mại hoặc nộp lại như sản phẩm của mình khi chưa có sự đồng ý bằng văn bản của tác giả. Chi tiết xem tệp LICENSE.**
 
 **Cam kết học thuật:** các số liệu, hình ảnh và tài liệu tham khảo được trích dẫn nguồn trong báo cáo. Dữ liệu hành trình hiển thị trên giao diện là dữ liệu trình diễn, không phải số đo từ chuyến vận chuyển thật.
 
