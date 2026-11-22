@@ -12,9 +12,6 @@ suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · tr�
 
 <img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/a8597199-9d6d-445a-aa2d-646a8f0d276c" />
 
-![Uploading image.png…]()
-
-
 
 *Đồ án cuối kỳ môn **Trí tuệ nhân tạo** — Khoa Công nghệ Thông tin, Trường Đại học Văn Lang*
 
