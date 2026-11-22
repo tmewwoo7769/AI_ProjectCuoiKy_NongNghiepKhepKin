@@ -10,21 +10,11 @@ suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · tr�
 
 <img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/9ba4e7f2-45bd-47a4-9c19-b6a65259e1b9" />
 
-
-<img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/47996063-597c-4737-bc24-c94602ffe62f" />
-
 <img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/a8597199-9d6d-445a-aa2d-646a8f0d276c" />
 
 ![Uploading image.png…]()
 
 
-![Status](https://img.shields.io/badge/status-prototype-orange)
-![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A5%2020.19-339933?logo=node.js&logoColor=white)
-![Python](https://img.shields.io/badge/Python-FastAPI-3776AB?logo=python&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas%20%7C%20Community-47A248?logo=mongodb&logoColor=white)
-![MQTT](https://img.shields.io/badge/MQTT-HiveMQ%20Cloud-660066)
-![STM32](https://img.shields.io/badge/MCU-STM32F103-03234B?logo=stmicroelectronics&logoColor=white)
-![ESP32-S3](https://img.shields.io/badge/MCU-ESP32--S3-E7352C?logo=espressif&logoColor=white)
 
 *Đồ án cuối kỳ môn **Trí tuệ nhân tạo** — Khoa Công nghệ Thông tin, Trường Đại học Văn Lang*
 
