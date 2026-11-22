@@ -1,11 +1,27 @@
 <div align="center">
 
-# 🌱 Hệ gợi ý Nông nghiệp Khép kín Thông minh
+# Hệ gợi ý Nông nghiệp Khép kín Thông minh
 
 **Smart Closed-Loop Agriculture Recommendation System**
 
 Hệ sinh thái IoT + AI kết nối xuyên suốt từ **canh tác** đến **vận chuyển lạnh** nông sản:
 suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · trợ lý ảo (LLM + RAG) · gợi ý cây trồng (Cosine Similarity).
+<img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/f5a3f816-2d2d-4e3f-9a34-c91a63de245a" />
+
+<img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/9ba4e7f2-45bd-47a4-9c19-b6a65259e1b9" />
+
+<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/0fe90d1d-cdd6-4c82-9100-efa555fb119e" />
+
+<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/1427cc4d-fe30-4757-baa8-910c7ea318cd" />
+
+<img width="902" height="507" alt="image" src="https://github.com/user-attachments/assets/ef7de8a2-8cb2-4eea-b2b7-d970c268de6b" />
+
+<img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/47996063-597c-4737-bc24-c94602ffe62f" />
+
+<img width="820" height="615" alt="image" src="https://github.com/user-attachments/assets/a8597199-9d6d-445a-aa2d-646a8f0d276c" />
+
+![Uploading image.png…]()
+
 
 ![Status](https://img.shields.io/badge/status-prototype-orange)
 ![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A5%2020.19-339933?logo=node.js&logoColor=white)
@@ -21,7 +37,7 @@ suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · tr�
 
 ---
 
-## 📑 Mục lục
+## Mục lục
 
 1. [Giới thiệu](#1--giới-thiệu)
 2. [Tính năng chính](#2--tính-năng-chính)
@@ -42,7 +58,7 @@ suy luận tại biên (TinyML) · dự báo chuỗi thời gian (ARIMA) · tr�
 
 ---
 
-## 1. 📖 Giới thiệu
+## 1. Giới thiệu
 
 ### Bối cảnh
 
@@ -77,27 +93,27 @@ Ngoài ra, **hệ gợi ý cây trồng** kết hợp độ tương đồng cosi
 
 ---
 
-## 2. ✨ Tính năng chính
+## 2. Tính năng chính
 
-### 🌿 Nút 1 — "Vườn"
+### Nút 1 — "Vườn"
 - Đo nhiệt độ, độ ẩm không khí, áp suất, khí gas (BME680), cường độ ánh sáng (BH1750), độ ẩm đất (cảm biến điện dung, ADC).
 - **TinyML** (cây quyết định) chạy trên STM32 điều khiển relay bơm; ngưỡng tham chiếu độ ẩm đất **35%**.
 - Hai chế độ: **TỰ ĐỘNG** (TinyML nắm quyền) và **THỦ CÔNG** (điều khiển từ web, độc lập với TinyML).
 - Màn hình TFT hiển thị thông số và trạng thái bơm tại chỗ.
 - Watchdog độc lập (**IWDG**) tự khởi động lại khi chương trình treo.
 
-### 🚚 Nút 2 — "Vận chuyển"
+### Nút 2 — "Vận chuyển"
 - Môi trường hàng hóa (BME680), độ rung (MPU6500), thời gian chính xác (DS3231), định vị (GPS ATGM336H).
 - Truyền dữ liệu qua **WiFi** (kiểm thử) hoặc **4G A7680C** (cờ `USE_GSM` trong firmware).
 - Giữ dấu thời gian đúng khi mất GPS; vị trí được đánh dấu "không còn mới".
 
-### 🖥️ Nền tảng giám sát
+### Nền tảng giám sát
 - Backend **Node.js / Express** nhận MQTT, lưu **MongoDB**, đẩy thời gian thực qua **Socket.io**.
 - Các màn hình: Tổng quan · Vườn thông minh · Hành trình · Dự báo ARIMA · Trợ lý nông nghiệp · Truy xuất QR.
 - Cảnh báo khi vượt ngưỡng (độ ẩm đất, nhiệt độ, độ ẩm không khí, ánh sáng, va đập khi vận chuyển).
 - Truy xuất nguồn gốc bằng mã QR theo mã chuyến hoặc mã lô.
 
-### 🤖 Dịch vụ AI (`AI_Service`)
+### Dịch vụ AI (`AI_Service`)
 - **ARIMA** chọn mô hình theo AIC trong tập `(1,1,1) (2,1,1) (1,1,2) (2,1,2)`; tự hạ độ phân giải gộp dữ liệu (1h → 30 → 15 → 10 → 5 phút) khi dữ liệu còn ít, đồng thời công bố độ phân giải và tầm nhìn thực tế trong kết quả.
 - **Trợ lý LLM** (Gemini hoặc OpenAI) theo cấu trúc *Nhận định – Cảnh báo – Khuyến nghị – Nguồn dữ liệu*. Khi chưa có khóa API, tự chuyển sang **bộ luật dự phòng** (giao diện hiện nhãn "RAG dự phòng") và vẫn trả lời dựa trên số đo thật.
 - **Hệ gợi ý cây trồng** (`recommender.py`): chuẩn hóa câu hỏi (không dấu, viết tắt, sai chính tả nhẹ), xếp hạng kết hợp **Cosine Similarity** với khoảng cách theo độ ẩm đất / nhiệt độ / ánh sáng, lọc theo vùng miền và giá trị thị trường, có dự phòng kinh tế khi cây người dùng muốn trồng không hợp điều kiện.
@@ -105,7 +121,7 @@ Ngoài ra, **hệ gợi ý cây trồng** kết hợp độ tương đồng cosi
 
 ---
 
-## 3. 🏗️ Kiến trúc hệ thống
+## 3. Kiến trúc hệ thống
 
 ```mermaid
 flowchart LR
@@ -166,7 +182,7 @@ Mỗi chu kỳ T:
 
 ---
 
-## 4. 🧰 Công nghệ sử dụng
+## 4. Công nghệ sử dụng
 
 | Thành phần | Công nghệ |
 | --- | --- |
@@ -181,7 +197,7 @@ Mỗi chu kỳ T:
 
 ---
 
-## 5. 📂 Cấu trúc thư mục
+## 5. Cấu trúc thư mục
 
 ```
 AI_ProjectCuoiKy_NongNghiepKhepKin/
@@ -219,7 +235,7 @@ AI_ProjectCuoiKy_NongNghiepKhepKin/
 └── CHAY_DEMO.bat                  # Script demo (cần sửa đường dẫn trước khi dùng)
 ```
 
-> [!WARNING]
+
 > **Mã nguồn giao diện (frontend) hiện chưa có trong repository.** Thư mục `FE_Giam-sat/` chỉ chứa `package-lock.json` rỗng và `FE_Giamsat` là một liên kết submodule bị hỏng (không có `.gitmodules`). Cần đẩy mã nguồn React lên repo trước khi các lệnh ở [mục 7](#7--cài-đặt-và-chạy) chạy được phần giao diện.
 
 ---
@@ -259,7 +275,7 @@ AI_ProjectCuoiKy_NongNghiepKhepKin/
 | GPS ATGM336H + ăng-ten | 1 | Định vị (UART) |
 | SIMCom A7680C + ăng-ten + SIM data | 1 | Truyền dữ liệu di động (UART) |
 
-### ✅ Danh sách kiểm tra trước khi chạy
+### Danh sách kiểm tra trước khi chạy
 
 - [ ] **Chung GND** giữa MCU, module GSM, relay và nguồn (thiếu GND chung từng làm A7680C không phản hồi).
 - [ ] Nguồn bơm trong dải **3–4,2 V**; không nối hai cell 18650 nối tiếp cho bơm.
@@ -270,7 +286,7 @@ AI_ProjectCuoiKy_NongNghiepKhepKin/
 
 ---
 
-## 7. 🚀 Cài đặt và chạy
+## 7. Cài đặt và chạy
 
 ### Yêu cầu hệ thống
 
@@ -341,7 +357,7 @@ Copy-Item .env.example .env
 
 <sub>macOS/Linux: `source .venv/bin/activate && pip install -r requirements.txt && uvicorn app.main:app --port 8000`</sub>
 
-> ⚠️ **Backend Node phải chạy trước**, vì `AI_Service` lấy dữ liệu từ đó. Trang thử API: <http://127.0.0.1:8000/docs>.
+> **Backend Node phải chạy trước**, vì `AI_Service` lấy dữ liệu từ đó. Trang thử API: <http://127.0.0.1:8000/docs>.
 
 ### Bước 4 — Chạy giao diện
 
@@ -353,7 +369,7 @@ npm run dev        # http://localhost:5173
 
 *(Xem cảnh báo về frontend ở [mục 5](#5--cấu-trúc-thư-mục).)*
 
-### ▶️ Chạy nhanh bằng script (Windows)
+### Chạy nhanh bằng script (Windows)
 
 | Script | Khi nào dùng | Mở các tiến trình |
 | --- | --- | --- |
@@ -362,7 +378,7 @@ npm run dev        # http://localhost:5173
 
 > `CHAY_DEMO.bat` đang chứa đường dẫn cứng `D:\Eureka\...`; hãy sửa theo máy của bạn hoặc dùng hai script ở trên.
 
-### 🧪 Kiểm thử khi chưa có phần cứng
+### Kiểm thử khi chưa có phần cứng
 
 Toàn bộ đường dữ liệu chạy được mà không cần ESP32, thậm chí không cần tài khoản HiveMQ:
 
@@ -390,7 +406,7 @@ node tools/seed.js --threshold 35      # nâng ngưỡng nhiệt chuỗi lạnh 
 node tools/seed.js --reset-readings    # xóa dữ liệu để bắt đầu lại
 ```
 
-### 🔑 Thiết lập HiveMQ Cloud (khi dùng phần cứng thật)
+### Thiết lập HiveMQ Cloud (khi dùng phần cứng thật)
 
 1. Vào [hivemq.com/mqtt-cloud-broker](https://www.hivemq.com/mqtt-cloud-broker/) → *Start free* → tạo cluster **Serverless (Free)**.
 2. Tab **Access Management** → *Add credentials*, quyền **Publish and Subscribe**.
@@ -405,9 +421,9 @@ MQTT_PASS=<password>
 
 ---
 
-## 8. ⚙️ Cấu hình biến môi trường
+## 8. Cấu hình biến môi trường
 
-> 🔒 **Không commit file `.env`** và không đặt khóa API trong mã nguồn hay frontend. Chỉ sao chép từ `.env.example`.
+> **Không commit file `.env`** và không đặt khóa API trong mã nguồn hay frontend. Chỉ sao chép từ `.env.example`.
 
 ### `BE_Giamsat/.env`
 
@@ -449,7 +465,7 @@ Kiểm tra trạng thái LLM tại `GET /api/health`: trường `models.llm` ph�
 
 ---
 
-## 9. 📡 Quy ước MQTT
+## 9. Quy ước MQTT
 
 ### Topic
 
@@ -514,7 +530,7 @@ Firmware phải subscribe `agri/node1_vuon/cmd`, thực hiện lệnh rồi **g�
 
 ---
 
-## 10. 📚 Tài liệu API
+## 10. Tài liệu API
 
 ### Backend — `http://localhost:4000/api`
 
@@ -605,7 +621,7 @@ Firmware phải subscribe `agri/node1_vuon/cmd`, thực hiện lệnh rồi **g�
 
 ---
 
-## 11. 🔧 Firmware
+## 11. Firmware
 
 ### Phân chia công việc
 
@@ -707,35 +723,35 @@ Số sau dấu phẩy trong `AT+CMQTTTOPIC` / `AT+CMQTTPAYLOAD` phải **đúng 
 
 ---
 
-## 12. 🧪 Kiểm thử và hiện trạng
+## 12. Kiểm thử và hiện trạng
 
 ### Hiện trạng sản phẩm
 
 | Thành phần | Trạng thái |
 | --- | --- |
-| Nút 1 "Vườn" (phần cứng, firmware, TinyML) | ✅ Hoàn thành, chạy trên chậu cây thật |
-| Nút 2 "Vận chuyển" (phần cứng, firmware) | 🟡 Hoàn thành phần cứng, kiểm thử từng khối; **chưa chạy qua 4G** |
-| Backend MQTT – MongoDB – Socket.io | ✅ Hoàn thành, chạy cục bộ |
-| Giao diện web giám sát | ✅ Hoàn thành *(mã nguồn cần được đưa lên repo — xem cảnh báo ở mục 5)* |
-| Dự báo ARIMA | 🟡 Nguyên mẫu |
-| Trợ lý ảo LLM + RAG | 🟡 Nguyên mẫu |
-| Hệ gợi ý cây trồng | 🟡 Nguyên mẫu |
+| Nút 1 "Vườn" (phần cứng, firmware, TinyML) | Hoàn thành, chạy trên chậu cây thật |
+| Nút 2 "Vận chuyển" (phần cứng, firmware) | Hoàn thành phần cứng, kiểm thử từng khối; **chưa chạy qua 4G** |
+| Backend MQTT – MongoDB – Socket.io |  Hoàn thành, chạy cục bộ |
+| Giao diện web giám sát |  Hoàn thành *(mã nguồn cần được đưa lên repo — xem cảnh báo ở mục 5)* |
+| Dự báo ARIMA |  Nguyên mẫu |
+| Trợ lý ảo LLM + RAG |  Nguyên mẫu |
+| Hệ gợi ý cây trồng |  Nguyên mẫu |
 
 ### Kết quả theo kế hoạch kiểm thử
 
 | Mã | Nội dung | Kết quả |
 | --- | --- | --- |
-| TC01 | I²C và đọc cảm biến Nút 2 | ✅ Đạt — thấy `0x68`, `0x69`, `0x76`, không xung đột |
-| TC02 | Định vị GPS | 🟡 Đạt có điều kiện — có fix khi nơi thoáng, mất fix trong nhà |
-| TC03 | Tưới tự động bằng TinyML | 🟡 Đạt về nguyên lý — BẬT khi độ ẩm thấp, TẮT khi vượt 35% |
-| TC04 | Điều khiển bơm thủ công từ web | ✅ Đạt |
-| TC05 | Truyền MQTT qua WiFi | ✅ Đạt *(chưa đo tỷ lệ mất gói)* |
-| TC06 | Truyền qua GSM/4G | ⏳ Chưa thực hiện (chưa có SIM) |
-| TC07 | TinyML so với bộ luật ngưỡng | ⏳ Chưa thực hiện |
-| TC08 | ARIMA so với persistence (RMSE/MAE) | ⏳ Chưa thực hiện |
-| TC09 | Trợ lý LLM/RAG theo bộ câu hỏi chuẩn | ⏳ Chưa thực hiện |
-| TC10 | Mã QR / truy xuất thông tin | ⏳ Chưa thực hiện |
-| TC11 | Hoạt động khi mất kết nối mạng | ⏳ Chưa thực hiện |
+| TC01 | I²C và đọc cảm biến Nút 2 |  Đạt — thấy `0x68`, `0x69`, `0x76`, không xung đột |
+| TC02 | Định vị GPS |  Đạt có điều kiện — có fix khi nơi thoáng, mất fix trong nhà |
+| TC03 | Tưới tự động bằng TinyML | Đạt về nguyên lý — BẬT khi độ ẩm thấp, TẮT khi vượt 35% |
+| TC04 | Điều khiển bơm thủ công từ web | Đạt |
+| TC05 | Truyền MQTT qua WiFi | Đạt *(chưa đo tỷ lệ mất gói)* |
+| TC06 | Truyền qua GSM/4G |  Chưa thực hiện (chưa có SIM) |
+| TC07 | TinyML so với bộ luật ngưỡng | Hoàn thành sơ bộ |
+| TC08 | ARIMA so với persistence (RMSE/MAE) |  Hoàn thành|
+| TC09 | Trợ lý LLM/RAG theo bộ câu hỏi chuẩn |  Hoàn thành |
+| TC10 | Mã QR / truy xuất thông tin |  Chưa thực hiện |
+| TC11 | Hoạt động khi mất kết nối mạng | Chưa thực hiện |
 
 > Các kịch bản **chưa thực hiện không được xem là đã đạt**. Chi tiết tại Bảng 3.8 và 4.7 của báo cáo.
 
@@ -749,7 +765,7 @@ Số sau dấu phẩy trong `AT+CMQTTTOPIC` / `AT+CMQTTPAYLOAD` phải **đúng 
 
 ---
 
-## 13. ⚠️ Hạn chế đã biết
+## 13. Hạn chế đã biết
 
 Nhóm công bố thẳng các hạn chế để người đọc đánh giá đúng phạm vi của nguyên mẫu:
 
@@ -772,7 +788,7 @@ Nhóm công bố thẳng các hạn chế để người đọc đánh giá đú
 
 ---
 
-## 14. 🗺️ Hướng phát triển
+## 14. Hướng phát triển
 
 - [ ] **TinyML:** đối chứng với bộ luật ngưỡng trên tập kiểm tra độc lập; gán nhãn theo chuẩn nông học (FAO-56 Penman–Monteith); đo độ chính xác, Flash/RAM, thời gian suy luận; thêm hysteresis và giới hạn thời gian bơm.
 - [ ] **Dự báo:** chuyển sang SARIMA/SARIMAX với biến ngoại sinh (trạng thái bơm); so RMSE/MAE với persistence; gắn dự báo với hành động (hoãn tưới khi có mưa); giới hạn khoảng tin cậy trong [0, 100]%.
@@ -784,7 +800,7 @@ Nhóm công bố thẳng các hạn chế để người đọc đánh giá đú
 
 ---
 
-## 15. 👥 Nhóm thực hiện
+## 15. Nhóm thực hiện
 
 **Nhóm 6** — Môn **Trí tuệ nhân tạo**, Khoa Công nghệ Thông tin, Trường Đại học Văn Lang.
 
@@ -793,24 +809,21 @@ Nhóm công bố thẳng các hạn chế để người đọc đánh giá đú
 | 1 | **Nguyễn Ngọc Hân** | 2474802010533 | Nhóm trưởng | Frontend, Backend, Hệ gợi ý, Báo cáo |
 | 2 | **Trương Anh Phú** | 2474802010312 | Thành viên | Bổ sung minh họa 2D cho Frontend |
 
-**Giảng viên hướng dẫn:** ThS. Phan Hồ Viết Trường
+**Giảng viên hướng dẫn đồ án môn học:** ThS. Phan Hồ Viết Trường
 
 ---
 
-## 16. 📎 Tài liệu liên quan và giấy phép
+## 16. Tài liệu liên quan và giấy phép
 
-- 📄 **Báo cáo đồ án:** `BaoCao_DoAnCuoiKy_Nhom06.docx` *(nên đưa vào thư mục `docs/` của repo)*.
-- 🧩 README chi tiết từng thành phần: [`BE_Giamsat/README.md`](BE_Giamsat/README.md) · [`AI_Service/README.md`](AI_Service/README.md) · [`firmware/README.md`](firmware/README.md).
+- 📄 **Báo cáo đồ án:** BaoCao_DoAnCuoiKy_Nhom06.docx
 
-**Giấy phép:** *chưa chỉ định.* Dự án thực hiện cho mục đích học tập; nếu muốn cho phép người khác tái sử dụng, hãy bổ sung tệp `LICENSE` (ví dụ MIT).
+**Giấy phép:** © 2026 Nguyễn Ngọc Hân, Xin bảo lưu mọi quyền. Mã nguồn được công khai để phục vụ đánh giá, chấm điểm; được phép xem và chạy thử cục bộ cho mục đích đánh giá. Không được sao chép, sửa đổi, phân phối lại, dùng thương mại hoặc nộp lại như sản phẩm của mình khi chưa có sự đồng ý bằng văn bản của tác giả. Chi tiết xem tệp LICENSE.
 
 **Cam kết học thuật:** các số liệu, hình ảnh và tài liệu tham khảo được trích dẫn nguồn trong báo cáo. Dữ liệu hành trình hiển thị trên giao diện là dữ liệu trình diễn, không phải số đo từ chuyến vận chuyển thật.
 
 ---
 
 <div align="center">
-
-⭐ Nếu thấy dự án hữu ích, hãy cho repo một sao! ⭐
 
 *Đồ án môn học · Trường Đại học Văn Lang · TP. Hồ Chí Minh, 2026*
 
